@@ -166,7 +166,7 @@ public:
 		auto btnPlayImage = gcnew Sprite(IDB_PNG1, L"PNG");
 
 		playButton = gcnew Button(btnPlayImage);
-		//playButton->setScale(0.5);
+		playButton->setScale(0.5);
 		playButton->setPos((Window::getSize() - playButton->getSize())/ 2);
 		this->add(playButton);
 
