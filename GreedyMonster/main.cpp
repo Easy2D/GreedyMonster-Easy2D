@@ -5,25 +5,25 @@
 class Monster : public Sprite
 {
 private:
-	double speed = 0;
+	float speed = 0;
 
 public:
 	// 最大速度
-	const double maxSpeed = 6;
+	const float maxSpeed = 6;
 	// 加速度
-	const double accel = 0.25;
+	const float accel = 0.25f;
 	// 摩擦力
-	const double friction = 0.05;
+	const float friction = 0.05f;
 	// 跳跃高度
-	const double jumpHeight = 150;
+	const float jumpHeight = 150;
 	// 跳跃时长
-	const double jumpDuration = 0.6;
+	const float jumpDuration = 0.6f;
 
 public:
 	Monster() : Sprite(IDB_PNG3, L"PNG")
 	{
-		this->setAnchor(0.5, 1);
-		this->setScale(0.5);
+		this->setAnchor(0.5f, 1);
+		this->setScale(0.5f);
 
 		// 关闭 onUpdate 函数
 		this->setAutoUpdate(false);
@@ -35,12 +35,12 @@ public:
 
 		// 打开 onUpdate 函数
 		this->setAutoUpdate(true);
-		this->setScale(0.6, 0.4);
+		this->setScale(0.6f, 0.4f);
 
 		// 创建拉伸动作，并播放跳跃声音
 		auto call = gcnew CallFunc([]() { Player::play(IDR_WAVE1, L"WAVE"); });
-		auto scale1 = gcnew ScaleTo(jumpDuration / 2, 0.4, 0.6);
-		auto scale2 = gcnew ScaleTo(jumpDuration / 2, 0.6, 0.4);
+		auto scale1 = gcnew ScaleTo(jumpDuration / 2, 0.4f, 0.6f);
+		auto scale2 = gcnew ScaleTo(jumpDuration / 2, 0.6f, 0.4f);
 		auto seq = gcnew Sequence;
 		seq->add({ call, scale1, scale2 });
 
@@ -72,7 +72,7 @@ public:
 		}
 
 		// 怪兽碰到屏幕边缘时弹开
-		double halfWidth = this->getWidth() / 2;
+		float halfWidth = this->getWidth() / 2;
 		if (this->getPosX() - halfWidth <= 0)
 		{
 			speed = -speed;
@@ -108,8 +108,8 @@ class Star : public Sprite
 public:
 	Star() : Sprite(IDB_PNG4, L"PNG")
 	{
-		this->setAnchor(0.5, 0);
-		this->setScale(0.5);
+		this->setAnchor(0.5f, 0);
+		this->setScale(0.5f);
 	}
 };
 
@@ -121,7 +121,7 @@ public:
 	Ground() : Sprite(IDB_PNG2, L"PNG")
 	{
 		this->setScaleX(2);
-		this->setScaleY(0.4);
+		this->setScaleY(0.4f);
 		this->setAnchor(0, 1);
 		this->setPosY(Window::getHeight());
 	}
@@ -148,7 +148,7 @@ public:
 
 		// 得分文本
 		scoreText = gcnew Text(L"Score: 0");
-		scoreText->setAnchor(0.5, 0);
+		scoreText->setAnchor(0.5f, 0);
 		scoreText->setPos(Window::getWidth() / 2, 20);
 		this->add(scoreText);
 
@@ -166,7 +166,7 @@ public:
 		auto btnPlayImage = gcnew Sprite(IDB_PNG1, L"PNG");
 
 		playButton = gcnew Button(btnPlayImage);
-		playButton->setScale(0.5);
+		playButton->setScale(0.5f);
 		playButton->setPos((Window::getSize() - playButton->getSize())/ 2);
 		this->add(playButton);
 
@@ -204,7 +204,7 @@ public:
 		star = gcnew Star;
 		star->setPos(pos);
 		// 星星在 2 至 3 秒内消失
-		auto fadeOut = gcnew FadeOut(Random::range(2.0, 3.0));
+		auto fadeOut = gcnew FadeOut(Random::range(2.f, 3.f));
 		// 星星消失后执行 GameScene::end 函数
 		auto call = gcnew CallFunc(std::bind(&GameScene::end, this));
 		// 执行动作
@@ -218,19 +218,19 @@ public:
 	// 随机星星位置
 	Point randomStarPos()
 	{
-		double randX = 0;
+		float randX = 0;
 		// 根据地平面位置和主角跳跃高度，随机得到一个星星的 y 坐标
-		double randY = Window::getHeight() - ground->getHeight() - Random::range(0.0, 1.0) * monster->jumpHeight - 50;
+		float randY = Window::getHeight() - ground->getHeight() - Random::range(0.f, 1.f) * monster->jumpHeight - 50;
 		// 根据屏幕宽度和上一个星星的 x 坐标，随机得到一个新生成星星 x 坐标
-		double maxX = Window::getWidth() / 2;
-		double currentX = star == nullptr ? Random::range(-1.0, 1.0) * maxX : star->getPosX() - maxX;
+		float maxX = Window::getWidth() / 2;
+		float currentX = star == nullptr ? Random::range(-1.f, 1.f) * maxX : star->getPosX() - maxX;
 		if (currentX >= 0) 
 		{
-			randX = -Random::range(0.0, 1.0) * (maxX - 50);
+			randX = -Random::range(0.f, 1.f) * (maxX - 50);
 		}
 		else
 		{
-			randX = Random::range(0.0, 1.0) * (maxX - 50);
+			randX = Random::range(0.f, 1.f) * (maxX - 50);
 		}
 		return Point(randX + maxX, randY);
 	}
@@ -242,7 +242,7 @@ public:
 		monster->setAutoUpdate(false);
 		monster->stopAllActions();
 		// 让怪兽跳到地面下方
-		auto jumpBy = gcnew JumpBy(0.6, Point(0, Window::getHeight()), -150);
+		auto jumpBy = gcnew JumpBy(0.6f, Point(0, Window::getHeight()), -150);
 		auto call = gcnew CallFunc([=]() { playButton->setVisiable(true); });
 
 		auto seq = gcnew Sequence;
