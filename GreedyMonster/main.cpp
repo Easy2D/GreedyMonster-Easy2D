@@ -1,6 +1,8 @@
 #include <easy2d.h>
 #include "resource.h"
 
+using namespace easy2d;
+
 // 怪兽
 class Monster : public Sprite
 {
@@ -56,11 +58,11 @@ public:
 	void onUpdate()
 	{
 		// 按左右键时，增加指定方向上的速度
-		if (Input::isDown(Input::Key::Left))
+		if (Input::isDown(Key::Left))
 		{
 			speed -= accel;
 		}
-		else if (Input::isDown(Input::Key::Right))
+		else if (Input::isDown(Key::Right))
 		{
 			speed += accel;
 		}
@@ -144,23 +146,23 @@ public:
 	{
 		// 背景图
 		auto background = gcnew Sprite(IDR_JPG1, L"JPG");
-		this->add(background);
+		this->addChild(background);
 
 		// 得分文本
 		scoreText = gcnew Text(L"Score: 0");
 		scoreText->setAnchor(0.5f, 0);
 		scoreText->setPos(Window::getWidth() / 2, 20);
-		this->add(scoreText);
+		this->addChild(scoreText);
 
 		// 地面
 		ground = gcnew Ground;
-		this->add(ground);
+		this->addChild(ground);
 
 		// 怪兽
 		monster = gcnew Monster;
 		monster->setPosX(Window::getWidth() / 2);
 		monster->setPosY(ground->getPosY() - ground->getHeight());
-		this->add(monster);
+		this->addChild(monster);
 
 		// 开始按钮
 		auto btnPlayImage = gcnew Sprite(IDB_PNG1, L"PNG");
@@ -168,7 +170,7 @@ public:
 		playButton = gcnew Button(btnPlayImage);
 		playButton->setScale(0.5f);
 		playButton->setPos((Window::getSize() - playButton->getSize())/ 2);
-		this->add(playButton);
+		this->addChild(playButton);
 
 		// 点击开始按钮后的回调函数
 		auto func = std::bind(&GameScene::start, this);
@@ -212,7 +214,7 @@ public:
 		seq->add({ fadeOut, call });
 		star->runAction(seq);
 
-		this->add(star);
+		this->addChild(star);
 	}
 
 	// 随机星星位置
