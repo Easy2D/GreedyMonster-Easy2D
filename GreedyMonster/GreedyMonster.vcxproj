@@ -150,7 +150,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ground.h" />
+    <ClInclude Include="MainScene.h" />
+    <ClInclude Include="Monster.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Star.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GreedyMonster.rc" />

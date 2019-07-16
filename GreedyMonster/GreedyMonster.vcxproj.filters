@@ -23,6 +23,18 @@
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Star.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GreedyMonster.rc">
