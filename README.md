@@ -7,3 +7,8 @@
 1. 下载并编译 Easy2D (项目地址：[https://github.com/nomango/easy2d](https://github.com/nomango/easy2d))
 2. 下载本项目，并按 Easy2D 中的安装方法，设置本项目的 `附加引用目录` 和 `附加库目录`
 3. 启动！
+
+## 运行预览
+
+![截图1](https://github.com/Nomango/GreedyMonster-Easy2D/raw/master/preview/preview1.png)
+![截图2](https://github.com/Nomango/GreedyMonster-Easy2D/raw/master/preview/preview2.png)
