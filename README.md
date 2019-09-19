@@ -1,12 +1,12 @@
 # GreedyMonster-Easy2D
 
-一款使用 Easy2D 制作的小游戏
+控制贪婪的小怪兽吃掉星星！
 
 ## 运行方法
 
-1. 下载并编译 Easy2D (项目地址：[https://github.com/nomango/easy2d](https://github.com/nomango/easy2d))
-2. 下载本项目，并按 Easy2D 中的安装方法，设置本项目的 `附加引用目录` 和 `附加库目录`
-3. 启动！
+1. 在安装了 Git 的终端上运行 `git clone https://github.com/Easy2D/GreedyMonster-Easy2D.git --recursive`
+2. 打开项目目录下的 `.sln` 文件
+3. 编译并启动！
 
 ## 运行预览
 
