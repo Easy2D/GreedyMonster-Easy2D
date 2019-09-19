@@ -1,6 +1,11 @@
 #include "MainScene.h"
 
-int main()
+int WINAPI WinMain(
+	HINSTANCE hInstance,
+	HINSTANCE hPrevInstance,
+	LPSTR lpCmdLine,
+	int nCmdShow
+)
 {
 	// ≥ı ºªØ
 	if (Game::init())
