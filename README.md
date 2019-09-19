@@ -10,5 +10,5 @@
 
 ## ÔËĞĞÔ¤ÀÀ
 
-![½ØÍ¼1](https://github.com/Nomango/GreedyMonster-Easy2D/raw/master/preview/preview1.png)
-![½ØÍ¼2](https://github.com/Nomango/GreedyMonster-Easy2D/raw/master/preview/preview2.png)
+![½ØÍ¼1](https://github.com/Easy2D/GreedyMonster-Easy2D/raw/master/preview/preview1.png)
+![½ØÍ¼2](https://github.com/Easy2D/GreedyMonster-Easy2D/raw/master/preview/preview2.png)
