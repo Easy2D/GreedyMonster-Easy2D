@@ -137,7 +137,7 @@ public:
 			if (monster->getBoundingBox().intersects(star->getBoundingBox()))
 			{
 				// 播放音效
-				Player::play(IDR_WAVE2, L"WAVE");
+				MusicPlayer::play(IDR_WAVE2, L"WAVE");
 				// 得分加一
 				score++;
 				scoreText->setText(L"Score: " + std::to_wstring(score));

@@ -21,8 +21,8 @@ int WINAPI WinMain(
 		Path::add(L"res/audio/");
 
 		// 预加载音乐
-		Player::preload(IDR_WAVE1, L"WAVE");
-		Player::preload(IDR_WAVE2, L"WAVE");
+		MusicPlayer::preload(IDR_WAVE1, L"WAVE");
+		MusicPlayer::preload(IDR_WAVE2, L"WAVE");
 
 		// 创建场景并进入
 		auto scene = gcnew MainScene;
