@@ -1,5 +1,5 @@
 #pragma once
-#include <easy2d.h>
+#include <easy2d/easy2d.h>
 #include "resource.h"
 
 using namespace easy2d;
@@ -59,11 +59,11 @@ public:
 	void onUpdate()
 	{
 		// 按左右键时，增加指定方向上的速度
-		if (Input::isDown(Key::Left))
+		if (Input::isDown(KeyCode::Left))
 		{
 			speed -= accel;
 		}
-		else if (Input::isDown(Key::Right))
+		else if (Input::isDown(KeyCode::Right))
 		{
 			speed += accel;
 		}

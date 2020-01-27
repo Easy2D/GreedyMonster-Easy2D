@@ -1,5 +1,5 @@
 #pragma once
-#include <easy2d.h>
+#include <easy2d/easy2d.h>
 #include "resource.h"
 #include "Monster.h"
 #include "Star.h"
@@ -57,7 +57,7 @@ public:
 	void start()
 	{
 		// 隐藏开始按钮
-		playButton->setVisiable(false);
+		playButton->setVisible(false);
 		// 重置得分
 		score = 0;
 		scoreText->setText(L"Score: 0");
@@ -122,7 +122,7 @@ public:
 		monster->stopAllActions();
 		// 让怪兽跳到地面下方
 		auto jumpBy = gcnew JumpBy(0.6f, Point(0, Window::getHeight()), -150);
-		auto call = gcnew CallFunc([=]() { playButton->setVisiable(true); });
+		auto call = gcnew CallFunc([=]() { playButton->setVisible(true); });
 
 		auto seq = gcnew Sequence;
 		seq->add({ jumpBy, call });
