@@ -11,11 +11,11 @@ using namespace easy2d;
 class MainScene : public Scene
 {
 private:
-	Text* scoreText = nullptr;
-	Monster* monster = nullptr;
-	Button* playButton = nullptr;
-	Star* star = nullptr;
-	Ground* ground = nullptr;
+	Text*		scoreText = nullptr;
+	Monster*	monster = nullptr;
+	Button*		playButton = nullptr;
+	Star*		star = nullptr;
+	Ground*		ground = nullptr;
 	int			score = 0;
 
 public:
@@ -122,7 +122,10 @@ public:
 		monster->stopAllActions();
 		// 让怪兽跳到地面下方
 		auto jumpBy = gcnew JumpBy(0.6f, Point(0, Window::getHeight()), -150);
-		auto call = gcnew CallFunc([=]() { playButton->setVisible(true); });
+		auto call = gcnew CallFunc([=]()
+			{
+				playButton->setVisible(true);
+			});
 
 		auto seq = gcnew Sequence;
 		seq->add({ jumpBy, call });

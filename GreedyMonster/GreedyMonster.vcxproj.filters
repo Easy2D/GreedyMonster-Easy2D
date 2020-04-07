@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="资源文件\图片">
+      <UniqueIdentifier>{77327afc-52e8-4f33-acf9-9cf6b1e3eaba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\音频">
+      <UniqueIdentifier>{a04d8dd1-3c5a-44f1-a470-1abc219ccde4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,28 +48,28 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\images\background.jpg">
+      <Filter>资源文件\图片</Filter>
+    </Image>
     <Image Include="res\images\btn_play.png">
-      <Filter>资源文件</Filter>
+      <Filter>资源文件\图片</Filter>
     </Image>
     <Image Include="res\images\ground.png">
-      <Filter>资源文件</Filter>
+      <Filter>资源文件\图片</Filter>
     </Image>
     <Image Include="res\images\Monster.png">
-      <Filter>资源文件</Filter>
+      <Filter>资源文件\图片</Filter>
     </Image>
     <Image Include="res\images\star.png">
-      <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="res\images\background.jpg">
-      <Filter>资源文件</Filter>
+      <Filter>资源文件\图片</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
     <Media Include="res\audio\jump.wav">
-      <Filter>资源文件</Filter>
+      <Filter>资源文件\音频</Filter>
     </Media>
     <Media Include="res\audio\score.wav">
-      <Filter>资源文件</Filter>
+      <Filter>资源文件\音频</Filter>
     </Media>
   </ItemGroup>
   <ItemGroup>
