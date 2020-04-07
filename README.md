@@ -10,8 +10,8 @@
 
 ## ткппт╓юю
 
-![╫ьм╪1](./preview1.png)
-![╫ьм╪2](./preview2.png)
+![╫ьм╪1](./preview/preview1.png)
+![╫ьм╪2](./preview/preview2.png)
 
 ## обть
 
