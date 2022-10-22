@@ -12,11 +12,11 @@ private:
 
 public:
 	// 最大速度
-	const float maxSpeed = 6;
+	const float maxSpeed = 360;
 	// 加速度
-	const float accel = 0.25f;
+	const float accel = 900;
 	// 摩擦力
-	const float friction = 0.05f;
+	const float friction = 180;
 	// 跳跃高度
 	const float jumpHeight = 150;
 	// 跳跃时长
@@ -61,11 +61,11 @@ public:
 		// 按左右键时，增加指定方向上的速度
 		if (Input::isDown(KeyCode::Left))
 		{
-			speed -= accel;
+			speed -= accel * Time::getDeltaTime();
 		}
 		else if (Input::isDown(KeyCode::Right))
 		{
-			speed += accel;
+			speed += accel * Time::getDeltaTime();
 		}
 
 		// 限制最大速度
@@ -96,10 +96,10 @@ public:
 		}
 		else
 		{
-			speed -= (speed > 0) ? friction : -friction;
+			speed -= ((speed > 0) ? friction : -friction) * Time::getDeltaTime();
 		}
 
 		// 横向移动怪兽位置
-		this->movePosX(speed);
+		this->movePosX(speed * Time::getDeltaTime());
 	}
 };
