@@ -8,7 +8,7 @@ using namespace easy2d;
 class Ground : public Sprite
 {
 public:
-	Ground() : Sprite(IDB_PNG2, L"PNG")
+	Ground() : Sprite(IDB_PNG2, "PNG")
 	{
 		this->setScaleX(2);
 		this->setScaleY(0.4f);

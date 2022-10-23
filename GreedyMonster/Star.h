@@ -8,7 +8,7 @@ using namespace easy2d;
 class Star : public Sprite
 {
 public:
-	Star() : Sprite(IDB_PNG4, L"PNG")
+	Star() : Sprite(IDB_PNG4, "PNG")
 	{
 		this->setAnchor(0.5f, 0);
 		this->setScale(0.5f);

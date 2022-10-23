@@ -23,7 +23,7 @@ public:
 	const float jumpDuration = 0.6f;
 
 public:
-	Monster() : Sprite(IDB_PNG3, L"PNG")
+	Monster() : Sprite(IDB_PNG3, "PNG")
 	{
 		this->setAnchor(0.5f, 1);
 		this->setScale(0.5f);
@@ -41,7 +41,7 @@ public:
 		this->setScale(0.6f, 0.4f);
 
 		// 创建拉伸动作，并播放跳跃声音
-		auto call = gcnew CallFunc([]() { MusicPlayer::play(IDR_WAVE1, L"WAVE"); });
+		auto call = gcnew CallFunc([]() { MusicPlayer::play(IDR_WAVE1, "WAVE"); });
 		auto scale1 = gcnew ScaleTo(jumpDuration / 2, 0.4f, 0.6f);
 		auto scale2 = gcnew ScaleTo(jumpDuration / 2, 0.6f, 0.4f);
 		auto seq = gcnew Sequence;

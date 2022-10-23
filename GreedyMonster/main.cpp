@@ -6,6 +6,7 @@
 //---------------------------------------------------------
 
 #include "MainScene.h"
+#include "resource.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -13,18 +14,17 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	if (Game::init())
 	{
 		// 设置窗口标题和大小
-		Window::setTitle(L"Greedy Monster");
+		Window::setTitle("Greedy Monster");
 		Window::setSize(512, 362);
-		// 关闭控制台
-		Logger::showConsole(false);
+		Window::setIcon(IDI_ICON1);
 
 		// 添加资源路径
-		Path::add(L"res/images/");
-		Path::add(L"res/audio/");
+		Path::add("res/images/");
+		Path::add("res/audio/");
 
 		// 预加载音乐
-		MusicPlayer::preload(IDR_WAVE1, L"WAVE");
-		MusicPlayer::preload(IDR_WAVE2, L"WAVE");
+		MusicPlayer::preload(IDR_WAVE1, "WAVE");
+		MusicPlayer::preload(IDR_WAVE2, "WAVE");
 
 		// 创建场景并进入
 		auto scene = gcnew MainScene;

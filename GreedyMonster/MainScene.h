@@ -22,11 +22,11 @@ public:
 	MainScene()
 	{
 		// 背景图
-		auto background = gcnew Sprite(IDR_JPG1, L"JPG");
+		auto background = gcnew Sprite(IDR_JPG1, "JPG");
 		this->addChild(background);
 
 		// 得分文本
-		scoreText = gcnew Text(L"Score: 0");
+		scoreText = gcnew Text("Score: 0");
 		scoreText->setAnchor(0.5f, 0);
 		scoreText->setPos(Window::getWidth() / 2, 20);
 		this->addChild(scoreText);
@@ -42,7 +42,7 @@ public:
 		this->addChild(monster);
 
 		// 开始按钮
-		auto btnPlayImage = gcnew Sprite(IDB_PNG1, L"PNG");
+		auto btnPlayImage = gcnew Sprite(IDB_PNG1, "PNG");
 
 		playButton = gcnew Button(btnPlayImage);
 		playButton->setScale(0.5f);
@@ -60,7 +60,7 @@ public:
 		playButton->setVisible(false);
 		// 重置得分
 		score = 0;
-		scoreText->setText(L"Score: 0");
+		scoreText->setText("Score: 0");
 		// 重置怪兽位置
 		monster->setPosX(Window::getWidth() / 2);
 		monster->setPosY(ground->getPosY() - ground->getHeight());
@@ -140,10 +140,10 @@ public:
 			if (monster->getBoundingBox().intersects(star->getBoundingBox()))
 			{
 				// 播放音效
-				MusicPlayer::play(IDR_WAVE2, L"WAVE");
+				MusicPlayer::play(IDR_WAVE2, "WAVE");
 				// 得分加一
 				score++;
-				scoreText->setText(L"Score: " + std::to_wstring(score));
+				scoreText->setText("Score: " + std::to_string(score));
 				// 产生一个新的星星
 				this->newStar();
 			}
